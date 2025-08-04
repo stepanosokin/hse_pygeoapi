@@ -183,6 +183,9 @@ resources:
                   user: ${PG_USER}
                   password: ${PG_PASS}
                   search_path: [zavody_rf, public]
+              options:
+                  sslmode: require  # for Yandex.Cloud  # https://docs.sqlalchemy.org/en/14/dialects/postgresql.html#ssl-connections
+                # sslrootcert: ~/.postgresql/root.crt   # for Yandex.Cloud # https://www.google.com/search?q=psycopg2+%2F+libpq+ssl&oq=psycopg2+%2F+libpq+ssl&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOdIBCDE3MTNqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8#vhid=zephyr:0&vssid=atritem-
               encoding: utf-8
               languages:
                   - ru-RU
@@ -191,37 +194,7 @@ resources:
               table: factories_rf_v
               geom_field: geom
     
-    test:
-        type: collection
-        title:
-            ru: тест
-            en: test
-        description: 
-            ru: тест
-            en: test
-        keywords:
-            - test
-        extents:
-            spatial:
-                bbox: [19.0,41.0,180.0,80.0]
-                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-        providers:
-            - type: feature
-              name: PostgreSQL
-              data:
-                  host: ${PG_HOST}
-                  port: ${PG_PORT}
-                  dbname: ${PG_DB}
-                  user: ${PG_USER}
-                  password: ${PG_PASS}
-                  search_path: [culture, public]
-              languages:
-                  - ru-RU
-                  - en-US
-              id_field: id
-              table: test
-              geom_field: geom
-
+    
     # lakes:
     #     type: collection
     #     title:
