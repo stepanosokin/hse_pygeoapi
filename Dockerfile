@@ -11,7 +11,7 @@ COPY ./my.config.yml /pygeoapi/local.config.yml
 ENV PG_HOST=my.fake.yandex.host
 ENV PG_PORT=0000
 ENV PG_DB=myfakedb
-ENV PG_USER=myfakeuser
+ENV PG_USER=myfakeuser1
 ENV PG_PASS=myfakepassword
 ENV API_HOST=localhost
 ENV API_PORT=5000
