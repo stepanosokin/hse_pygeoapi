@@ -61,5 +61,12 @@ lockbox.payloadViewer
 количество подготовленных экземпляров - 2
 
 
+для отслеживания проблем очень помогло включить логи в pygeoapi в режим DEBUG, а в ревизии контейнера - логи в режим UNSPECIFIED (ALL). Тогда мы видим в логах контейнера в яндексе все, что пишет контейнер в stdout
 
+logging:
+    # level: DEBUG
+    level: ERROR
+    #logfile: /tmp/pygeoapi.log
+
+параметр logfile не должен быть задан, тогда pygeoapi пишет журнал в stdout.
 
